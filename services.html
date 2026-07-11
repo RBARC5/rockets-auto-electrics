@@ -7,7 +7,7 @@
 <meta name="description" content="Mobile auto electrical and air conditioning services across the Sunshine Coast — alternators, diagnostics, air con, brake controllers, dual battery and accessories.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 
@@ -63,10 +63,14 @@
     <div class="wrap service-detail-list">
 
       <div class="service-detail" id="alternators">
-        <div class="service-detail-icon"><div class="anim-spinner"></div></div>
+        <div class="service-detail-head">
+          <div class="service-detail-icon"><div class="anim-spinner"></div></div>
+          <div>
+            <span class="service-detail-tag">CHARGING SYSTEM</span>
+            <h2>Alternators & Starters</h2>
+          </div>
+        </div>
         <div class="service-detail-body">
-          <span class="service-detail-tag">CHARGING SYSTEM</span>
-          <h2>Alternators & Starters</h2>
           <p>If your car's struggling to start, or the battery light's come on while
           you're driving, it's usually your alternator or starter motor. We diagnose
           the fault on the spot, and carry common replacement parts on the van so most
@@ -80,11 +84,15 @@
         </div>
       </div>
 
-      <div class="service-detail reverse" id="aircon">
-        <div class="service-detail-icon"><div class="anim-wave"><span></span><span></span><span></span><span></span><span></span></div></div>
+      <div class="service-detail" id="aircon">
+        <div class="service-detail-head">
+          <div class="service-detail-icon"><div class="anim-wave"><span></span><span></span><span></span><span></span><span></span></div></div>
+          <div>
+            <span class="service-detail-tag">CLIMATE SYSTEM</span>
+            <h2>Air Conditioning</h2>
+          </div>
+        </div>
         <div class="service-detail-body">
-          <span class="service-detail-tag">CLIMATE SYSTEM</span>
-          <h2>Air Conditioning</h2>
           <p>Warm air blowing when it should be cold usually means a refrigerant leak
           or a failing component. We leak-test properly rather than just re-gassing
           and hoping, so you're not paying for the same fix twice.</p>
@@ -98,12 +106,16 @@
       </div>
 
       <div class="service-detail" id="diagnostics">
-        <div class="service-detail-icon">
-          <svg class="anim-scan" width="140" height="40"><polyline points="0,20 20,20 30,6 40,34 50,20 70,20 80,10 90,30 100,20 140,20" style="stroke-dashoffset:0"/></svg>
+        <div class="service-detail-head">
+          <div class="service-detail-icon">
+            <svg class="anim-scan" width="140" height="40"><polyline points="0,20 20,20 30,6 40,34 50,20 70,20 80,10 90,30 100,20 140,20" style="stroke-dashoffset:0"/></svg>
+          </div>
+          <div>
+            <span class="service-detail-tag">FAULT FINDING</span>
+            <h2>Electrical Diagnosis</h2>
+          </div>
         </div>
         <div class="service-detail-body">
-          <span class="service-detail-tag">FAULT FINDING</span>
-          <h2>Electrical Diagnosis</h2>
           <p>Dash warning lights, intermittent faults and gremlins that only show up
           sometimes — these need proper scan tools, not guesswork. We use dealer-level
           diagnostic equipment to find the actual fault, first time.</p>
@@ -116,11 +128,15 @@
         </div>
       </div>
 
-      <div class="service-detail reverse" id="brakes">
-        <div class="service-detail-icon"><div class="anim-pulse"></div></div>
+      <div class="service-detail" id="brakes">
+        <div class="service-detail-head">
+          <div class="service-detail-icon"><div class="anim-pulse"></div></div>
+          <div>
+            <span class="service-detail-tag">TOWING SYSTEM</span>
+            <h2>Electric Brake Controllers</h2>
+          </div>
+        </div>
         <div class="service-detail-body">
-          <span class="service-detail-tag">TOWING SYSTEM</span>
-          <h2>Electric Brake Controllers</h2>
           <p>Towing a trailer or caravan? We supply and fit electric brake controllers,
           wired in properly to your vehicle and tested under load — not just plugged
           in and hoped for the best.</p>
@@ -134,10 +150,14 @@
       </div>
 
       <div class="service-detail" id="battery">
-        <div class="service-detail-icon"><div class="anim-battery"></div></div>
+        <div class="service-detail-head">
+          <div class="service-detail-icon"><div class="anim-battery"></div></div>
+          <div>
+            <span class="service-detail-tag">POWER SYSTEM</span>
+            <h2>Dual Battery & Cruise Control</h2>
+          </div>
+        </div>
         <div class="service-detail-body">
-          <span class="service-detail-tag">POWER SYSTEM</span>
-          <h2>Dual Battery & Cruise Control</h2>
           <p>Heading off-grid or just want more power on board? We fit dual battery
           systems sized to what you actually run — fridges, lighting, camping gear —
           plus cruise control installation for long-haul comfort.</p>
@@ -150,11 +170,15 @@
         </div>
       </div>
 
-      <div class="service-detail reverse" id="accessories">
-        <div class="service-detail-icon"><div class="anim-twinkle"><span></span><span></span><span></span></div></div>
+      <div class="service-detail" id="accessories">
+        <div class="service-detail-head">
+          <div class="service-detail-icon"><div class="anim-twinkle"><span></span><span></span><span></span></div></div>
+          <div>
+            <span class="service-detail-tag">FIT-OUT</span>
+            <h2>Audio, Lighting & Accessories</h2>
+          </div>
+        </div>
         <div class="service-detail-body">
-          <span class="service-detail-tag">FIT-OUT</span>
-          <h2>Audio, Lighting & Accessories</h2>
           <p>From a stereo upgrade to a full lighting and camera fit-out, we install
           it properly — wired in, fused correctly, and finished so it looks factory,
           not aftermarket.</p>
@@ -215,6 +239,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>
