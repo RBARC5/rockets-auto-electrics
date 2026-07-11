@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recent Jobs — Rockets Auto Electrics + Air Conditioning</title>
+<meta name="description" content="Recent jobs completed by Rockets Auto Electrics + Air Conditioning across the Sunshine Coast.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span>SUNSHINE COAST MOBILE SERVICE</span><span>•</span>
+    <span>WE COME TO YOU</span><span>•</span>
+    <span>4.7★ FROM 13 GOOGLE REVIEWS</span><span>•</span>
+    <span>AUTO ELECTRICAL + AIR CONDITIONING</span><span>•</span>
+    <span>SUNSHINE COAST MOBILE SERVICE</span><span>•</span>
+    <span>WE COME TO YOU</span><span>•</span>
+    <span>4.7★ FROM 13 GOOGLE REVIEWS</span><span>•</span>
+    <span>AUTO ELECTRICAL + AIR CONDITIONING</span><span>•</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.jpg" alt="Rockets Auto Electrics + Air Conditioning" class="brand-logo">
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="jobs.html" class="active">Recent Jobs</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:0411577599" class="phone-pill">
+        <span class="dot"></span> 0411 577 599
+      </a>
+      <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero circuit-bg">
+    <div class="wrap">
+      <p class="eyebrow">RECENT JOBS</p>
+      <h1>A look at jobs<br>we've recently done.</h1>
+      <p class="page-hero-sub">Real photos from real jobs across the Sunshine Coast, updated as we finish them.</p>
+    </div>
+  </section>
+
+  <!-- JOBS LIST -->
+  <section class="section">
+    <div class="wrap">
+      <div id="jobsList" class="jobs-grid">
+        <p class="jobs-loading">Loading recent jobs…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMERGENCY CTA -->
+  <section class="emergency-cta">
+    <div class="wrap emergency-inner">
+      <div>
+        <p class="eyebrow eyebrow-light">GOT A JOB LIKE THIS?</p>
+        <h2>Get in touch for a quote.</h2>
+        <p class="emergency-sub">Same-day and emergency callouts available across the Sunshine Coast.</p>
+      </div>
+      <a href="contact.html" class="btn btn-primary btn-lg">Get a Quote</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer circuit-bg">
+  <div class="wrap footer-grid">
+    <div>
+      <img src="assets/logo.jpg" alt="Rockets Auto Electrics" class="footer-logo">
+      <p>Family owned mobile auto electrician and air conditioning service,
+      covering the Sunshine Coast.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="services.html">Services</a>
+      <a href="jobs.html">Recent Jobs</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="tel:0411577599">0411 577 599</a>
+      <a href="mailto:RocketsAutoElectrics599@gmail.com">RocketsAutoElectrics599@gmail.com</a>
+      <a href="https://www.facebook.com/RocketsAutoElectrics/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <div>
+      <h4>Hours</h4>
+      <p>Mon–Fri: 5am–5pm<br>Sat: 6am–5pm<br>Sun: Closed</p>
+      <p class="abn">ABN 88 646 989 826</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Rockets Auto Electrics + Air Conditioning</span>
+  </div>
+</footer>
+
+<script src="script.js?v=5"></script>
+<script>
+(async function loadJobs() {
+  const el = document.getElementById('jobsList');
+  try {
+    const res = await fetch('data/jobs.json?_=' + Date.now());
+    const jobs = await res.json();
+    if (!jobs.length) {
+      el.innerHTML = '<p class="jobs-loading">No job posts yet — check back soon.</p>';
+      return;
+    }
+    el.innerHTML = jobs.map(job => `
+      <div class="job-post-card">
+        <img src="${job.image}" alt="${job.title}" loading="lazy">
+        <div class="job-post-body">
+          <span class="job-post-date">${new Date(job.date).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+          <h3>${job.title}</h3>
+          <p>${job.message}</p>
+        </div>
+      </div>
+    `).join('');
+  } catch (e) {
+    el.innerHTML = '<p class="jobs-loading">Couldn\'t load recent jobs right now.</p>';
+  }
+})();
+</script>
+</body>
+</html>
