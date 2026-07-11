@@ -67,4 +67,22 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  const bookingForm = document.getElementById('bookingForm');
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('formNote').textContent =
+        "This form isn't connected yet \u2014 once the backend is set up, submitting here will email you a reference number automatically.";
+    });
+  }
+
+  const lookupForm = document.getElementById('lookupForm');
+  if (lookupForm) {
+    lookupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('lookupNote').textContent =
+        "Quote lookup isn't connected yet \u2014 this will let you check status once the backend is live.";
+    });
+  }
 });
