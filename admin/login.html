@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login — Rockets Auto Electrics</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=5">
+</head>
+<body style="background:var(--asphalt)">
+<div style="min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px;">
+  <div style="max-width:380px; width:100%; background:#fff; border-radius:8px; padding:2.4rem;">
+    <img src="../assets/logo.jpg" alt="Rockets Auto Electrics" style="height:48px; margin:0 auto 1.6rem;">
+    <p class="eyebrow center">ADMIN</p>
+    <h2 class="section-title center" style="font-size:1.4rem; margin-bottom:1.6rem;">Log in</h2>
+    <div class="form-field" style="margin-bottom:1rem;">
+      <label for="apiBase" style="color:var(--asphalt)">Backend URL</label>
+      <input type="text" id="apiBase" placeholder="https://rockets-backend-xxxx.onrender.com" style="border:1px solid var(--line); background:#fff; color:var(--asphalt);">
+    </div>
+    <div class="form-field" style="margin-bottom:1.2rem;">
+      <label for="password" style="color:var(--asphalt)">Password</label>
+      <input type="password" id="password" style="border:1px solid var(--line); background:#fff; color:var(--asphalt);">
+    </div>
+    <button id="loginBtn" class="btn btn-primary" style="width:100%;">Log In</button>
+    <p id="loginNote" style="margin-top:1rem; font-size:0.88rem; color:var(--orange); text-align:center;"></p>
+  </div>
+</div>
+<script>
+const apiBaseInput = document.getElementById('apiBase');
+apiBaseInput.value = localStorage.getItem('rockets_api_base') || '';
+
+document.getElementById('loginBtn').addEventListener('click', async () => {
+  const apiBase = apiBaseInput.value.trim().replace(/\/$/, '');
+  const password = document.getElementById('password').value;
+  const note = document.getElementById('loginNote');
+  if (!apiBase || !password) {
+    note.textContent = 'Enter the backend URL and password.';
+    return;
+  }
+  localStorage.setItem('rockets_api_base', apiBase);
+  note.textContent = 'Logging in…';
+  try {
+    const res = await fetch(apiBase + '/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ password })
+    });
+    const data = await res.json();
+    if (res.ok && data.ok) {
+      window.location.href = 'dashboard.html';
+    } else {
+      note.textContent = data.error || 'Login failed.';
+    }
+  } catch (e) {
+    note.textContent = 'Could not reach the backend. Check the URL and try again.';
+  }
+});
+</script>
+</body>
+</html>
