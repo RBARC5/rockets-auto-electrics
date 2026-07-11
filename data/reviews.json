@@ -1,0 +1,44 @@
+[
+  {
+    "id": "seed1",
+    "author": "Neil",
+    "rating": 5,
+    "text": "I've really appreciated the work Rod has done for me recently. My 2005 Camry needed the air-con compressor replaced, and he was able to fit me in quickly.",
+    "date": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "seed2",
+    "author": "Claire Barker",
+    "rating": 5,
+    "text": "I would 100% recommend Rockets to anyone. Extremely pleased with the work they did for me in an incredibly timely manner at a super fair and no doubt hard to beat price.",
+    "date": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "seed3",
+    "author": "Sarah Cavanagh",
+    "rating": 5,
+    "text": "Excellent, honest, professional service. Rod helped me out, clearly explained and fixed some previous sub-standard work done by someone else.",
+    "date": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "seed4",
+    "author": "C.D.",
+    "rating": 5,
+    "text": "Came to my residence within the hour after my initial call about headlights blown and dimming. Polite and personable, fixed the problem in an expeditious manner.",
+    "date": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "seed5",
+    "author": "Karen Parkyn",
+    "rating": 5,
+    "text": "Thanks for reassuring me and taking the time to check my sunroof panic! Great communication and will highly recommend you and use you again.",
+    "date": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "seed6",
+    "author": "Toni Wilkeis",
+    "rating": 5,
+    "text": "Prompt, efficient and excellent on trouble shooting and fault finding. Very reasonably priced, local guy. Definitely recommend!",
+    "date": "2026-01-01T00:00:00.000Z"
+  }
+]
